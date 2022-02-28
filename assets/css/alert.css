@@ -1,0 +1,110 @@
+:root {
+    --lightgray: #efefef;
+    --blue: steelblue;
+    --white: #fff;
+    --black: rgba(0, 0 ,0, 0.8);
+    --bounceEasing: cubic-bezier(0.51, 0.92, 0.24, 1.15);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: inherit;
+}
+
+.pop-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    font: 16px/1.5 sans-serif;
+}
+
+.pop-btn-group {
+    text-align: center;
+}
+
+.pop-open-modal {
+    font-weight: bold;
+    background: var(--blue);
+    color: var(--white);
+    padding: .75rem 1.75rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+/* Modal */
+.pop-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: var(--black);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s ease-in;
+}
+
+.pop-modal.is-visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+.pop-modal-dialog {
+    position: relative;
+    max-width: 700px;
+    max-height: 70vh;
+    border-radius: 5px;
+    background: var(--white);
+    overflow: auto;
+    cursor: default;
+}
+
+.pop-modal-dialog > * {
+    padding: 1rem;
+  }
+   
+.pop-modal-header,
+.pop-modal-footer {
+    background: var(--lightgray);
+}
+   
+.pop-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+   
+.pop-modal-header .pop-modal-close {
+    font-size: 1.5rem;
+  }
+   
+.pop-modal p + p {
+    margin-top: 1rem;
+  }
+
+/* Animations */
+[data-animation="slideInOutLeft"] .pop-modal-dialog {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.5s var(--bounceEasing);
+}
+   
+[data-animation="slideInOutLeft"].is-visible .pop-modal-dialog {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.2s;
+}
