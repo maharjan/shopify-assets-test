@@ -7,6 +7,7 @@ window.addEventListener('DOMContentLoaded', function() {
     popContainer.appendChild(hiddenButton);
 
     var parentDiv = document.createElement('div');
+    parentDiv.id= 'pop-modal';
     parentDiv.className= 'popup-modal';
     parentDiv.setAttribute('data-animation','slideInOutLeft');
 
