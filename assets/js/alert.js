@@ -21,12 +21,14 @@ window.addEventListener('load', function () {
     var closeButton = document.createElement('button');
     closeButton.className = 'pop-modal-close';
     closeButton.setAttribute('aria-label', 'close modal');
+    closeButton.setAttribute('data-dismiss', 'modal');
+    closeButton.innerHTML = '&times;';
     header.appendChild(closeButton);
 
     var section = document.createElement('section');
     section.className = 'pop-modal-content';
 
-    var sectionContent = '<p><strong>Press ✕, ESC, or click outside of the modal to close it</strong></p>';
+    var sectionContent = '<p><strong>Press x, ESC, or click outside of the modal to close it</strong></p>';
     var sectionMainContent = '<p>John Doe is missing!</p>'
     section.innerHTML = sectionContent;
     section.innerHTML += sectionMainContent;
