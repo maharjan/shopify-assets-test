@@ -1,10 +1,10 @@
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('load', function() {
     var popContainer = document.getElementById('popupAdContainer');
     var hiddenButton = document.createElement('button');
     hiddenButton.id= 'hidden-button';
     hiddenButton.hidden=true;
     hiddenButton.setAttribute('data-open','pop-modal');
-    popContainer.appendChild(hiddenButton);
+    // popContainer.appendChild(hiddenButton);
 
     var parentDiv = document.createElement('div');
     parentDiv.id= 'pop-modal';
@@ -42,6 +42,35 @@ window.addEventListener('DOMContentLoaded', function() {
 
     setTimeout(function() {
         popContainer.appendChild(parentDiv);
-        this.document.getElementById('hidden-button').click();
     }, 5000);
-})
+});
+
+const openEls = document.querySelectorAll("[data-open]");
+const closeEls = document.querySelectorAll("[data-close]");
+const isVisible = "is-visible";
+
+for (const el of openEls) {
+  el.addEventListener("click", function() {
+    const modalId = this.dataset.open;
+    document.getElementById(modalId).classList.add(isVisible);
+  });
+}
+
+for (const el of closeEls) {
+  el.addEventListener("click", function() {
+    this.parentElement.parentElement.parentElement.classList.remove(isVisible);
+  });
+}
+
+document.addEventListener("click", e => {
+  if (e.target == document.querySelector(".pop-modal.is-visible")) {
+    document.querySelector(".pop-modal.is-visible").classList.remove(isVisible);
+  }
+});
+
+document.addEventListener("keyup", e => {
+  // if we press the ESC
+  if (e.key == "Escape" && document.querySelector(".pop-modal.is-visible")) {
+    document.querySelector(".pop-modal.is-visible").classList.remove(isVisible);
+  }
+});
