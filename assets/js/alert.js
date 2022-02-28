@@ -1,10 +1,7 @@
 window.alert("Hello & welcom to shopify");
 
 window.addEventListener("load", function() {
-    var popupAdContainer = document.getElementById("popupAdContainer");
-
-    var parentDiv = document.createElement("div");
-    parentDiv.id = "popup-modal-1";
+    var parentDiv = document.getElementById("popupAdContainer");
     parentDiv.className= "popup-modal";
 
     var div1 = document.createElement("div");
@@ -35,6 +32,4 @@ window.addEventListener("load", function() {
     div1.appendChild(section);
     div1.appendChild(footer)
     parentDiv.appendChild(div1);
-
-    popupAdContainer.appendChild(parentDiv);
 })
