@@ -8,14 +8,14 @@ window.addEventListener('DOMContentLoaded', function() {
 
     var parentDiv = document.createElement('div');
     parentDiv.id= 'pop-modal';
-    parentDiv.className= 'popup-modal';
+    parentDiv.className= 'pop-modal';
     parentDiv.setAttribute('data-animation','slideInOutLeft');
 
     var div1 = document.createElement('div');
-    div1.className= 'popup-modal-dialog';
+    div1.className= 'pop-modal-dialog';
 
     var header = document.createElement('header');
-    header.className= 'popup-modal-header';
+    header.className= 'pop-modal-header';
     header.innerHTML= 'This is just header';
     
     var closeButton = document.createElement('button');
