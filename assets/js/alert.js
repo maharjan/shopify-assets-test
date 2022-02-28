@@ -1,4 +1,4 @@
-window.alert("Hello & welcom to shopify");
+window.alert("Hello & welcome to shopify");
 
 window.addEventListener("load", function() {
     var parentDiv = document.getElementById("popupAdContainer");
