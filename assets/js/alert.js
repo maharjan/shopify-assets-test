@@ -38,7 +38,9 @@ window.addEventListener('DOMContentLoaded', function() {
     div1.appendChild(section);
     div1.appendChild(footer)
     parentDiv.appendChild(div1);
-    popContainer.appendChild(parentDiv);
 
-    this.document.getElementById('hidden-button').click();
+    setTimeout(function() {
+        popContainer.appendChild(parentDiv);
+        this.document.getElementById('hidden-button').click();
+    }, 5000);
 })
