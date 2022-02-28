@@ -6,40 +6,6 @@
     --bounceEasing: cubic-bezier(0.51, 0.92, 0.24, 1.15);
 }
 
-* {
-    padding: 0;
-    margin: 0;
-}
-
-.button {
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: inherit;
-}
-
-.pop-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-    font: 16px/1.5 sans-serif;
-}
-
-.pop-btn-group {
-    text-align: center;
-}
-
-.pop-open-modal {
-    font-weight: bold;
-    background: var(--blue);
-    color: var(--white);
-    padding: .75rem 1.75rem;
-    margin-bottom: 1rem;
-    border-radius: 5px;
-}
-
 /* Modal */
 .pop-modal {
     position: fixed;
