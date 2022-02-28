@@ -1,10 +1,10 @@
 window.addEventListener('load', function() {
     var popContainer = document.getElementById('popupAdContainer');
     var hiddenButton = document.createElement('button');
-    hiddenButton.id= 'hidden-button';
+    hiddenButton.id= 'popup-hidden-button';
     hiddenButton.hidden=true;
     hiddenButton.setAttribute('data-open','pop-modal');
-    // popContainer.appendChild(hiddenButton);
+    popContainer.appendChild(hiddenButton);
 
     var parentDiv = document.createElement('div');
     parentDiv.id= 'pop-modal';
@@ -39,9 +39,10 @@ window.addEventListener('load', function() {
     div1.appendChild(section);
     div1.appendChild(footer)
     parentDiv.appendChild(div1);
+    popContainer.appendChild(parentDiv);
 
-    setTimeout(function() {
-        popContainer.appendChild(parentDiv);
+    setTimeout(function() {   
+        document.getElementById('popup-hidden-button').click();
     }, 5000);
 });
 
